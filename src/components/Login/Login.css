@@ -1,0 +1,109 @@
+.darken{
+    background-color: #354463;
+    opacity: 100%;
+    mix-blend-mode: multiply;
+}
+
+
+.login-bg{
+    background-image: url('../../images/face-6.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    background-size: cover;
+}
+
+.login-form{
+    mix-blend-mode:normal;
+    background-color: #354463;
+    padding: 30px 50px;
+}
+
+.login-form input{
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    width: 320px;
+}
+
+.login-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16pt;
+    color: #FFFFFF;
+}
+
+.error{
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 10pt;
+    color: #DC3545;
+}
+
+.input{
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    border: none;
+    border-bottom: 1px solid #C1F7D5 !important;
+    background-color: rgba(0,0,0,0);
+    color: #FFFFFF;
+}
+
+.submit-button{
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    padding: 8px 20px !important;
+    background-color: #C1F7D5 !important;
+    border: none !important;
+    color: #354463 !important;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.submit-button:hover{
+    background-color: white !important;
+    color:  #354463  !important;
+}
+
+.create-acc-link{
+    color:  #C1F7D5 !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+hr{
+    border: .01rem solid rgb(128, 128, 128, .3) !important;
+}
+
+.login-with-google{
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    border: .01rem solid rgba(255, 255, 255, 0.5) !important;
+    color: white !important;
+    
+}
+
+.login-with-google:hover{
+    background-color: #db4a39 !important;
+    border: .01rem solid #db4a39  !important;}
+
+.login-with-fb{
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    border: .01rem solid rgba(255, 255, 255, 0.5) !important;
+    color: white !important;    
+}
+
+.login-with-fb:hover{
+    background-color: #3B5998 !important;
+    border: .01rem solid #3B5998  !important;
+}
+
+.min-100vh{
+    min-height: 92vh;
+    overflow: hidden;
+}
