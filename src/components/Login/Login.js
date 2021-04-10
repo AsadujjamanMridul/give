@@ -32,8 +32,8 @@ const Login = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-    const onSubmit = data =>{
-         console.log(data)
+    const onSubmit = data => {
+        console.log(data)
     };
 
     if (!firebase.apps.length) {
@@ -118,6 +118,31 @@ const Login = () => {
     }
 
 
+    const handleFacebookSignIn = () => {
+        var fbProvider = new firebase.auth.FacebookAuthProvider();
+        firebase
+            .auth()
+            .signInWithPopup(fbProvider)
+            .then((result) => {
+                var credential = result.credential;
+                var user = result.user;
+                var accessToken = credential.accessToken;
+
+                const { displayName, email } = result.user;
+                const newLoggedInUser = { name: displayName, email };
+                setLoggedInUser(newLoggedInUser);
+                history.replace(from);
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                var email = error.email;
+                var credential = error.credential;
+
+                alert(errorCode, errorMessage);
+            });
+    }
+
 
     // Checking Existing User 
 
@@ -126,16 +151,16 @@ const Login = () => {
         form = <form className='login-form' onSubmit={handleSubmit(onSignIn)} >
             <h4 className="login-title">Create an account</h4>
 
-            < input className='input' name="name" {...register('name', {required: true})} placeholder="Name" />
+            < input className='input' name="name" {...register('name', { required: true })} placeholder="Name" />
             {errors.name && <span className='error'>Name is required</span>}
 
-            < input className='input' name="email" {...register('email', {required: true})} placeholder="Email" />
+            < input className='input' name="email" {...register('email', { required: true })} placeholder="Email" />
             {errors.email && <span className='error'>Email is required</span>}
 
-            < input className='input' type='password' name="password" {...register('password', {required: true})}placeholder="Passowrd" />
+            < input className='input' type='password' name="password" {...register('password', { required: true })} placeholder="Passowrd" />
             {errors.password && <span className='error'>Password is required</span>}
 
-            < input className='input' type='password' name="confirmPassword" {...register('confirmPassword', {required: true})} placeholder="Confirm passowrd" />
+            < input className='input' type='password' name="confirmPassword" {...register('confirmPassword', { required: true })} placeholder="Confirm passowrd" />
             {errors.confirmPassword && <span className='error'>This field is required</span>}
 
             <input className='submit-button' type="submit" value="Create an account" />
@@ -146,14 +171,14 @@ const Login = () => {
     if (user === 'existing') {
         form = <form className='login-form' onSubmit={handleSubmit(onLogIn)} >
             <h4 className="login-title">Login</h4>
-            < input className='input' name="email" {...register('email', {required: true})} placeholder="Email" />
+            < input className='input' name="email" {...register('email', { required: true })} placeholder="Email" />
             {errors.email && <span className='error'>Email is required</span>}
 
-            < input className='input' type='password' name="password" {...register('password', {required: true})} placeholder="Passowrd" />
+            < input className='input' type='password' name="password" {...register('password', { required: true })} placeholder="Passowrd" />
             {errors.password && <span className='error'>Password is required</span>}
 
             <input className='submit-button' type="submit" value="Login" />
-            
+
             <p className='text-center mt-2 text-white'><small>Don't have an account?  <Link to='/login/new' className='create-acc-link'> Create a new one</Link></small></p>
         </form>
     }
@@ -168,14 +193,14 @@ const Login = () => {
                 <div className="col-md-6 bg-blue container d-flex justify-content-center align-items-center min-100vh m-0 p-0">
                     <div className="py-5">
                         {form}
-                        
+
                         <div className="d-flex justify-content-center">
                             <div>
                                 <div className="d-flex justify-content-center">
                                     <button onClick={handleGoogleSignIn} className="btn login-with-google my-2"><FontAwesomeIcon icon={faGoogle} className='me-3' />Continue with google</button>
                                 </div>
                                 <div className="d-flex justify-content-center">
-                                    <button className="btn login-with-fb"><FontAwesomeIcon icon={faFacebookF} className='me-3' />Continue with facebook</button>
+                                    <button onClick={handleFacebookSignIn} className="btn login-with-fb"><FontAwesomeIcon icon={faFacebookF} className='me-3' />Continue with facebook</button>
                                 </div>
                             </div>
                         </div>

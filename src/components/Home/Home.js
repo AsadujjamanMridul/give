@@ -2,8 +2,7 @@ import React from 'react';
 import './Home.css'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import Sponsor from '../Sponsor/Sponsor';
-import RecentArticles from '../RecentArticles/RecentArticles';
+
 import RecentCampaigns from '../RecentCampaigns/RecentCampaigns';
 
 const Home = () => {
