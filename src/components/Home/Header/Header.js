@@ -13,7 +13,7 @@ const Header = () => {
                                 <div className="px-2">
                                     <h1 className="text-white header-title">Donate and Be a Super Hero</h1>
                                     <p className="text-white my-2 header-desc text-md-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam unde id, nulla sunt doloremque sed atque ut reprehenderit adipisci cum!</p>
-                                    <Link className='d-flex justify-content-center align-items-center'>
+                                    <Link to='/donate-cash' className='d-flex justify-content-center align-items-center'>
                                         <button className="btn mt-md-4 mb-md-3 my-3 btn-brand-bright shadow">Donate Now</button>
                                     </Link>
                                 </div>
@@ -27,7 +27,7 @@ const Header = () => {
                                 <div className="px-2">
                                     <h1 className="text-white header-title">Share the Warmth</h1>
                                     <p className="text-white my-2 header-desc text-md-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam nam eligendi autem numquam culpa porro delectus minima voluptate distinctio!</p>
-                                    <Link className='d-flex justify-content-center align-items-center'>
+                                    <Link to='/donate-cash' className='d-flex justify-content-center align-items-center'>
                                         <button className="btn mt-md-4 mb-md-3 my-3 btn-brand-bright shadow">Donate Now</button>
                                     </Link>
                                 </div>
@@ -41,7 +41,7 @@ const Header = () => {
                                 <div className="px-2">
                                     <h1 className="text-white header-title">Let's fight against Corona</h1>
                                     <p className="text-white my-2 header-desc text-md-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit id ipsam earum dicta, corporis eos laboriosam placeat, sapiente illo nulla quasi assumenda in recusandae magnam adipisci. Neque quia repudiandae et.</p>
-                                    <Link className='d-flex justify-content-center align-items-center'>
+                                    <Link to='/donate-cash' className='d-flex justify-content-center align-items-center'>
                                         <button className="btn mt-md-4 mb-md-3 my-3 btn-brand-bright shadow">Donate Now</button>
                                     </Link>
                                 </div>

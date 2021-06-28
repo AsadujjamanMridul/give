@@ -31,7 +31,7 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-        <Switch>
+        <Switch>npm
           <Route path='/home'>
             <Home />
           </Route>
