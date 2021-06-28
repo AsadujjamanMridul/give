@@ -1,0 +1,26 @@
+.side-header {
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: end;
+    color: rgb(0, 21, 41) !important;
+}
+
+.admin-input {
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    line-height: 2em;
+    background-color: transparent;
+    border: 1px solid rgba(16, 55, 92, 0.2);
+
+    &::placeholder {
+        color: rgba(16, 55, 92, 0.5);
+    }
+
+    &:focus {
+        outline: none !important;
+        border: 1px solid transparent;
+        box-shadow: rgba(16, 55, 92, 0.2) 0px 2px 8px 0px;
+        background-color: transparent !important;
+    }
+}

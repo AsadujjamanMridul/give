@@ -1,0 +1,184 @@
+.App {
+  background-color: #354463;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-1 {
+  color: #10375c !important;
+}
+
+.color-2 {
+  color: #29de92 !important;
+}
+
+.color-3 {
+  color: #bae8e8 !important;
+}
+
+.color-4 {
+  color: #e3f6f5 !important;
+}
+
+.color-5 {
+  color: #ffffff !important;
+}
+
+.bg-1 {
+  background-color: #10375c !important;
+}
+
+.bg-2 {
+  background-color: #29de92 !important;
+}
+
+.bg-3 {
+  background-color: #bae8e8 !important;
+}
+
+.bg-4 {
+  background-color: #e3f6f5 !important;
+}
+
+.bg-5 {
+  background-color: #ffffff !important;
+}
+
+.btn-brand {
+  background-color: #10375c;
+  border-color: #10375c;
+  font-family: "Poppins", sans-serif;
+  padding: 0.7em 1.5em;
+  font-size: 1.1em;
+  color: #e3f6f5;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+  &:hover {
+    background-color: #29de92;
+    border-color: #29de92;
+    color: #10375c;
+  }
+}
+
+.btn-brand-bright {
+  background-color: #29de92;
+  border-color: #29de92;
+  font-family: "Poppins", sans-serif;
+  padding: 0.7em 1.5em;
+  font-size: 1.1em;
+  color: #10375c;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+  &:hover {
+    background-color: #10375c;
+    border-color: #10375c;
+    color: #e3f6f5;
+  }
+}
+
+.btn-brand-borderless {
+  background-color: transparent;
+  border-color: transparent;
+  font-family: "Poppins", sans-serif;
+  padding: 0.7em 1.5em;
+  font-size: 1.1em;
+  color: #10375c;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+  &:hover {
+    background-color: rgba(16, 55, 92, 0.08);
+    border-color: transparent;
+    color: #10375c;
+  }
+}
+
+.message {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em;
+  margin-top: 2em;
+}
+
+.fs-1 {
+  font-size: 1em !important;
+}
+
+
+// Media query
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .btn-brand,
+  .btn-brand-borderless,
+  .btn-brand-bright {
+    font-size: 0.9em;
+  }
+
+  .message {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8em;
+    margin-top: 1.8em;
+  }
+
+  .fs-1{
+    font-size: .9em !important;
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) and (min-width: 575.98px) {
+  .btn-brand,
+  .btn-brand-bright,
+  .btn-brand-borderless {
+    font-size: 1em;
+  }
+
+  .message {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8em;
+    margin-top: 1.8em;
+  }
+
+  .fs-1{
+    font-size: .9em !important;
+  }
+}
+
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

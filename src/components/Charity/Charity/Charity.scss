@@ -1,0 +1,127 @@
+.charity-card-1 {
+    background-image: linear-gradient(rgba(76, 201, 240, 0.65), rgba(76, 201, 240, 0.65)),
+        url("../../../images/gallery/d12.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: all 0.5s ease-in-out !important;
+
+    h2 {
+        background-color: transparent;
+        box-shadow: transparent 0px 2px 8px 0px;
+        border: 1px solid white;
+        border-radius: 0.2em;
+        transform: scale(1);
+        color: #ffffff;
+        padding: 1em 2em;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &:hover {
+        cursor: pointer;
+        h2 {
+            transform: scale(1.1);
+            color: #224a70 !important;
+            background-color: rgba(76, 201, 240, 0.8);
+            border: 1px solid transparent;
+            box-shadow: rgba(16, 55, 92, 0.2) 0px 2px 8px 0px;
+        }
+    }
+}
+
+.charity-card-2 {
+    background-image: linear-gradient(rgba(67, 97, 238, 0.65), rgba(67, 97, 238, 0.65)),
+        url("../../../images/gallery/d9.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: all 0.5s ease-in-out !important;
+
+    h2 {
+        background-color: transparent;
+        box-shadow: transparent 0px 2px 8px 0px;
+        border: 1px solid white;
+        border-radius: 0.2em;
+        transform: scale(1);
+        color: #ffffff;
+        padding: 1em 2em;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &:hover {
+        cursor: pointer;
+        h2 {
+            transform: scale(1.1);
+            color: white;
+            background-color: rgba(67, 97, 238, .8);
+            border: 1px solid transparent;
+            box-shadow: rgba(16, 55, 92, 0.2) 0px 2px 8px 0px;
+        }
+    }
+}
+
+.charity-card-3 {
+    background-image: linear-gradient(rgba(58, 12, 163, 0.65), rgba(58, 12, 163, 0.65)),
+        url("../../../images/flood.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: all 0.5s ease-in-out !important;
+
+    h2 {
+        background-color: transparent;
+        box-shadow: transparent 0px 2px 8px 0px;
+        border: 1px solid white;
+        border-radius: 0.2em;
+        transform: scale(1);
+        color: #ffffff;
+        padding: 1em 2em;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &:hover {
+        cursor: pointer;
+        h2 {
+            transform: scale(1.1);
+            color: white;
+            background-color: rgba(58, 12, 163, 0.8);
+            border: 1px solid transparent;
+            box-shadow: rgba(16, 55, 92, 0.2) 0px 2px 8px 0px;
+        }
+    }
+}
+
+.charity-card-4 {
+    background-image: linear-gradient(rgba(114, 9, 183, 0.65), rgba(114, 9, 183, 0.65)),
+        url("../../../images/gallery/g3.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: all 0.5s ease-in-out !important;
+
+    h2 {
+        background-color: transparent;
+        box-shadow: transparent 0px 2px 8px 0px;
+        border: 1px solid white;
+        border-radius: 0.2em;
+        transform: scale(1);
+        color: #ffffff;
+        padding: 1em 2em;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &:hover {
+        cursor: pointer;
+        h2 {
+            transform: scale(1.1);
+            color: white;
+            background-color: rgba(114, 9, 183, 0.8);
+            border: 1px solid transparent;
+            box-shadow: rgba(16, 55, 92, 0.2) 0px 2px 8px 0px;
+        }
+    }
+}

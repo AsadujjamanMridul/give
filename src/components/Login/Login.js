@@ -11,13 +11,13 @@ import "firebase/auth";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
+import Footer from '../SharedComponents/Footer/Footer';
 import './Login.css'
 
 import firebaseConfig from '../../firebase.config';
 
 import face1 from '../../images/5.jpg'
+import Navbar from '../SharedComponents/Navbar/Navbar';
 
 const Login = () => {
 
@@ -33,14 +33,12 @@ const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        console.log(data)
+        // console.log(data)
     };
 
     if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
     }
-
-
 
     const onSignIn = data => {
         const { name, email, password, confirmPassword } = data;
@@ -51,9 +49,10 @@ const Login = () => {
                     const { email } = user;
 
                     user.updateProfile({
-                        displayName: name
+                        displayName: name,
+                        photoURL: '../../icon/user.png'
                     }).then(function () {
-                        const newLoggedInUser = { name, email };
+                        const newLoggedInUser = { name, email, imageURL: '../../icon/user.png' };
                         setLoggedInUser(newLoggedInUser);
                         history.replace(from);
                     }).catch(function (error) {
@@ -78,8 +77,8 @@ const Login = () => {
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                const { displayName, email } = user;
-                const newLoggedInUser = { name: displayName, email };
+                const { displayName, email, photoURL } = user;
+                const newLoggedInUser = { name: displayName, email, imageURL: photoURL };
                 setLoggedInUser(newLoggedInUser);
                 history.replace(from);
             })
@@ -102,8 +101,8 @@ const Login = () => {
             .then((result) => {
                 var credential = result.credential;
                 var token = credential.accessToken;
-                const { displayName, email } = result.user;
-                const newLoggedInUser = { name: displayName, email };
+                const { displayName, email, photoURL } = result.user;
+                const newLoggedInUser = { name: displayName, email, imageURL: photoURL };
                 setLoggedInUser(newLoggedInUser);
                 history.replace(from);
 
@@ -186,7 +185,7 @@ const Login = () => {
 
     return (
         <div>
-            <Header />
+            <Navbar/>
 
             <div className="row">
                 <div className="col-md-6 login-bg"></div>

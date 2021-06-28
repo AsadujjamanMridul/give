@@ -1,0 +1,41 @@
+.tog-header {
+    height: 50vh;
+    background-image: linear-gradient(rgba(41, 222, 146, 0.3), rgba(41, 222, 146, 0.3)),
+        url("../../images//gallery/g12.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: all 0.5s ease-in-out !important;
+
+    h2 {
+        background-color: rgba(0, 21, 41, 0.5);
+        font-family: "Poppins", sans-serif;
+        font-size: 2em;
+        color: #ffffff;
+        padding: 1em 2em !important;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+        box-shadow: rgba(16, 55, 92, 0.2) 0px 2px 8px 0px;
+    }
+}
+
+
+// Media query
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .tog-header{
+        height: 30vh;
+    }
+    .tog-header > h2 {
+        font-size: 1.2em;
+    }
+  }
+  
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) and (min-width: 575.98px) {
+    .tog-header > h2 {
+        font-size: 1.5em;
+    }
+  }

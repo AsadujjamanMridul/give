@@ -1,0 +1,65 @@
+.flood-title{
+   font-family: "Poppins", sans-serif;
+   font-size: 1.8em;
+   line-height: 2em;
+   text-align: center;
+   color: #10375c;
+}
+
+.flood-desc{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3em;
+    line-height: 2em;
+    text-align: center !important;
+    font-weight: 500;
+    padding: 0 2em;
+    transition: background-color .5s ease-in-out;
+    &:hover{
+        background-color: rgba(41, 222, 146, .5) !important;
+        cursor:no-drop;
+    }
+}
+
+.campaign-description{
+    font-family: "Poppins", sans-serif;
+    font-size: .9em;
+    line-height: 1.5em;
+    text-align: center !important;
+    font-weight: 400;
+    color: rgba(16, 55, 92, 0.5);
+}
+
+
+// Media query
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px){ 
+    .flood-donation-div{
+        margin: 8em 2em 7em;
+    }
+
+    .flood-desc{
+        font-size: 1.1em;
+    }
+
+    .flood-title{
+        font-size: 1.3em;
+     }
+     
+}
+  
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) and (min-width: 575.98px)  { 
+    .flood-donation-div{
+        margin: 8em 2em 7em;
+    }
+
+    .flood-desc{
+        font-size: 1.1em;
+    }
+
+    .flood-title{
+        font-size: 1.3em;
+     }
+     
+   }

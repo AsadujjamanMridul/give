@@ -1,0 +1,62 @@
+[data-theme="compact"] .site-collapse-custom-collapse .site-collapse-custom-panel,
+.site-collapse-custom-collapse .site-collapse-custom-panel {
+    margin-bottom: 1em;
+    overflow: hidden;
+    border: 0px;
+}
+
+.custom-collapse {
+    background-color: #c8efe1 !important;
+}
+
+.custom-panel {
+    font-family: "Poppins", sans-serif;
+    font-size: 1em !important;
+    font-weight: 400;
+    margin: 0;
+    background-color: transparent;
+}
+
+.voluntter-divider {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em !important;
+    font-weight: 500;
+    line-height: 2em;
+    background-color: transparent;
+}
+
+.fw-600{
+    font-weight: 600 !important;
+}
+
+.custom-danger-modal{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400 !important;
+    font-size: .9em !important;
+}
+
+
+// Media query
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .voluntter-divider {
+        font-size: 1em !important;
+    }
+
+    .custom-panel {
+        font-size: .9em !important;
+    }
+    
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) and (min-width: 575.98px) {
+    .voluntter-divider {
+        font-size: 1em !important;
+    }
+
+    .custom-panel {
+        font-size: .9em !important;
+    }
+}

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
+
+
+.card {
+    background-color: #354463;
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif
+}
+
+
+#inp1 {
+    border-top: 1px solid #fff !important;
+    border-left: 1px solid #fff !important;
+    border-bottom: 1px solid #fff !important;
+    font-size: .9rem;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    color: #FFFFFF;
+}
+
+#inp1:focus {
+    outline: none;
+    box-shadow: none
+}
+
+*:focus {
+    outline: none
+}
+
+.bg-light-green{
+    background-color: #C1F7D5 !important;
+}
+
+.btn-subscribe{
+    background-color: #29de92;
+    border-color: #29de92;
+    font-family: "Poppins", sans-serif;
+    padding: .7em 1.5em;
+    font-size: 1.1em;
+    color: #10375c;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
+    &:hover{
+      background-color: #E3F6F5;
+      border-color: #E3F6F5;
+      color: #10375c;
+    }
+  }
+  
+
+  // Media query
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px){ 
+    .btn-subscribe{
+      font-size: .9em;
+    }
+  
+  }
+  
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) and (min-width: 575.98px)  { 
+    .btn-subscribe{
+      font-size: 1.1em;
+    }
+
+   }
+  

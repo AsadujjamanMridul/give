@@ -1,0 +1,29 @@
+.custom-divider{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5em !important;
+    font-weight: 500;
+    line-height: 2em;
+    background-color: transparent;
+
+}
+
+
+
+// Media query
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px){ 
+    .custom-divider{
+        font-size: 1.2em !important;    
+    }
+  }
+  
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) and (min-width: 575.98px)  { 
+    .custom-divider{
+        font-size: 1.2em !important;    
+    }
+   }
+  
+  
+  
