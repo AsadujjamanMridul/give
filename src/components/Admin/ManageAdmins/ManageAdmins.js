@@ -25,13 +25,13 @@ const ManageAdmins = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`http://localhost:5000/deleteAdmin/${id}`, {
+                fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteAdmin/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('http://localhost:5000/admins')
+                            fetch('https://enigmatic-fortress-83830.herokuapp.com/admins')
                                 .then(res => res.json())
                                 .then(data => {
                                     setAdmins(data);
@@ -56,7 +56,7 @@ const ManageAdmins = () => {
 
     const onSubmit = newAdminData => {
 
-        const url = "http://localhost:5000/addAdmin";
+        const url = "https://enigmatic-fortress-83830.herokuapp.com/addAdmin";
 
         fetch(url, {
             method: "POST",
@@ -87,7 +87,7 @@ const ManageAdmins = () => {
     }, [])
 
     const reloadData = () => {
-        fetch('http://localhost:5000/admins')
+        fetch('https://enigmatic-fortress-83830.herokuapp.com/admins')
             .then(res => res.json())
             .then(data => {
                 setAdmins(data);
@@ -109,7 +109,7 @@ const ManageAdmins = () => {
             </Row>
 
             <div className='container'>
-                <Divider orientation='left' className='voluntter-divider color-1'>Add New Admin</Divider>
+                <Divider orientation='left' className='volunteer-divider color-1'>Add New Admin</Divider>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <Row gutter={[{ xs: 12, sm: 16, md: 24 }, { xs: 12, sm: 16, md: 24 }]}
@@ -170,7 +170,7 @@ const ManageAdmins = () => {
             </div>
 
             <div className='container'>
-                <Divider orientation='left' className='voluntter-divider color-1'>Admins</Divider>
+                <Divider orientation='left' className='volunteer-divider color-1'>Admins</Divider>
                 <Collapse
                     bordered={false}
                     expandIcon={({ isActive }) => <CaretDownOutlined rotate={isActive ? 180 : 0} />}

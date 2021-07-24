@@ -15,7 +15,7 @@ const BecomeAVolunteer = () => {
         data.gender = gender;
         console.log(data)
 
-        const url = `http://localhost:5000/newVolunteerRequest`;
+        const url = `https://enigmatic-fortress-83830.herokuapp.com/newVolunteerRequest`;
 
         fetch(url, {
             method: "POST",

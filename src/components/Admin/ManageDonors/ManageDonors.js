@@ -25,13 +25,13 @@ const ManageDonors = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`http://localhost:5000/deleteDonor/${id}`, {
+                fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteDonor/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('http://localhost:5000/donors')
+                            fetch('https://enigmatic-fortress-83830.herokuapp.com/donors')
                                 .then(res => res.json())
                                 .then(data => {
                                     setDonors(data);
@@ -60,7 +60,7 @@ const ManageDonors = () => {
 
         newDonorData.photoURL = imageURL;
 
-        const url = "http://localhost:5000/addDonor";
+        const url = "https://enigmatic-fortress-83830.herokuapp.com/addDonor";
 
         fetch(url, {
             method: "POST",
@@ -91,7 +91,7 @@ const ManageDonors = () => {
     }, [])
 
     const reloadData = () => {
-        fetch('http://localhost:5000/donors')
+        fetch('https://enigmatic-fortress-83830.herokuapp.com/donors')
             .then(res => res.json())
             .then(data => {
                 setDonors(data);
@@ -130,7 +130,7 @@ const ManageDonors = () => {
             </Row>
 
             <div className='container'>
-                <Divider orientation='left' className='voluntter-divider color-1'>Add New Donor</Divider>
+                <Divider orientation='left' className='volunteer-divider color-1'>Add New Donor</Divider>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <Row gutter={[{ xs: 12, sm: 16, md: 24 }, { xs: 12, sm: 16, md: 24 }]}
@@ -231,7 +231,7 @@ const ManageDonors = () => {
             </div>
 
             <div className='container'>
-                <Divider orientation='left' className='voluntter-divider color-1'>Donors</Divider>
+                <Divider orientation='left' className='volunteer-divider color-1'>Donors</Divider>
                 <Collapse
                     bordered={false}
                     expandIcon={({ isActive }) => <CaretDownOutlined rotate={isActive ? 180 : 0} />}

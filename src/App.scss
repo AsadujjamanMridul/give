@@ -91,6 +91,22 @@
     border-color: transparent;
     color: #10375c;
   }
+  &:focus {
+    outline: none !important;
+    border-color: transparent !important;
+    box-shadow: transparent !important;
+  }
+}
+
+.btn {
+  outline: none !important;
+  border-color: transparent !important;
+  box-shadow: transparent !important;
+  &:focus {
+    outline: none !important;
+    border-color: transparent !important;
+    box-shadow: transparent !important;
+  }
 }
 
 .message {
@@ -102,7 +118,6 @@
 .fs-1 {
   font-size: 1em !important;
 }
-
 
 // Media query
 
@@ -120,8 +135,8 @@
     margin-top: 1.8em;
   }
 
-  .fs-1{
-    font-size: .9em !important;
+  .fs-1 {
+    font-size: 0.9em !important;
   }
 }
 
@@ -139,8 +154,8 @@
     margin-top: 1.8em;
   }
 
-  .fs-1{
-    font-size: .9em !important;
+  .fs-1 {
+    font-size: 0.9em !important;
   }
 }
 

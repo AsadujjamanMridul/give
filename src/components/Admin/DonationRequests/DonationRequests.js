@@ -18,13 +18,13 @@ const DonationRequests = () => {
     const [requests, setRequests] = useState([]);
 
     const deleteDonationRequest = id => {
-        fetch(`http://localhost:5000/deleteDonationRequest/${id}`, {
+        fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteDonationRequest/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    fetch('http://localhost:5000/donationRequest')
+                    fetch('https://enigmatic-fortress-83830.herokuapp.com/donationRequest')
                         .then(res => res.json())
                         .then(data => {
                             setRequests(data);
@@ -59,7 +59,7 @@ const DonationRequests = () => {
     }, [])
 
     const reloadScreen = () => {
-        fetch('http://localhost:5000/donationRequest')
+        fetch('https://enigmatic-fortress-83830.herokuapp.com/donationRequest')
             .then(res => res.json())
             .then(data => {
                 setRequests(data);
@@ -79,7 +79,7 @@ const DonationRequests = () => {
             </Row>
 
             <div className='container'>
-                <Divider orientation='left' className='voluntter-divider color-1'>Donation Requested</Divider>
+                <Divider orientation='left' className='volunteer-divider color-1'>Donation Requested</Divider>
                 <Collapse
                     bordered={false}
                     expandIcon={({ isActive }) => <CaretDownOutlined rotate={isActive ? 180 : 0} />}

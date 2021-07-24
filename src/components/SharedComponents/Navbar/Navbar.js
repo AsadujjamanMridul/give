@@ -1,16 +1,41 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App'
 import logo from '../../../images/logo.png'
 import './Navbar.scss'
 
+import { Popover } from 'antd'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
+
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [navbar, setNavbar] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [isDonor, setIsDonor] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://enigmatic-fortress-83830.herokuapp.com/isAdmin?email=${loggedInUser.email}`)
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    setIsAdmin(true);
+                }
+            })
+
+        fetch(`https://enigmatic-fortress-83830.herokuapp.com/isDonor?email=${loggedInUser.email}`)
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    setIsDonor(result);
+                }
+            })
+    }, [loggedInUser.email])
+
+    const clearUser = () => {
+        setLoggedInUser({});
+        localStorage.setItem('loggedInUser', JSON.stringify({}));
+    }
 
     let loginButtonToggle;
     if (loggedInUser.name === undefined) {
@@ -19,11 +44,29 @@ const Navbar = () => {
     }
     else {
         loginButtonToggle =
-        <div className='d-flex mx-auto'>
-        <div>
-            <img src={loggedInUser.imageURL} alt="..." className='img-fluid rounded-circle loggedIn-img ms-md-4 mt-2 mt-md-0' />
-        </div>
-    </div>
+            <div className='d-flex mx-auto'>
+                <Popover
+                    overlayInnerStyle={{
+                        borderRadius: '.5em'
+                    }}
+                    placement="bottom"
+                    color={'#E3F6F5'}
+                    content={
+                        <div className='d-block'>
+                            {
+                                isAdmin ?
+                                    <Link to='/admin' className='btn btn-brand sign-out-btn me-3'>Admin</Link> :
+                                    <Link to='/dashboard' className='btn btn-brand sign-out-btn me-3'>Dashboard</Link>
+                            }
+
+                            <button className='btn btn-brand-borderless sign-out-btn' onClick={() => clearUser()}>Sign Out</button>
+                        </div>
+                    }
+                    trigger={'hover'}
+                >
+                    <img src={isDonor[0] ? isDonor[0].photoURL : loggedInUser.imageURL } alt="..." className='img-fluid rounded-circle loggedIn-img ms-md-4 mt-2 mt-md-0' />
+                </Popover>
+            </div>
     }
 
     const changeNavbar = () => {

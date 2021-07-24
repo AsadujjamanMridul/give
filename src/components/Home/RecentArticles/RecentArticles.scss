@@ -1,0 +1,70 @@
+.sponsor-card-img {
+    opacity: 0.8 !important;
+}
+
+.bg-dark-blue {
+    background-color: #354463 !important;
+}
+
+.sponsor-card {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.sponsor-card-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.sponsor-card-desc {
+    font-family: "Rubik", sans-serif;
+    font-size: 1em;
+}
+
+.sponsor-card-button {
+    background-color: #354463;
+    color: #c1f7d5 !important;
+    border: none;
+}
+
+.sponsor-card-button:hover {
+    background-color: #c1f7d5;
+    color: #354463 !important;
+}
+
+.recent-camp-title {
+    font-family: "Rubik", sans-serif;
+    color: #354463 !important;
+    font-size: 14pt;
+    font-weight: 400;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+
+// Media query
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .sponsor-card-title {
+        font-size: 1em;
+    }
+    
+    .sponsor-card-desc {
+        font-size: .8em;
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) and (min-width: 575.98px) {
+    .sponsor-card-title {
+        font-size: 1.2em;
+    }
+    
+    .sponsor-card-desc {
+        font-size: .9em;
+    }
+}

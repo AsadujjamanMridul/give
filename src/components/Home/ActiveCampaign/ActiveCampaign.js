@@ -9,7 +9,7 @@ const ActiveCampaign = () => {
     return (
         <section id="active-campaign" className="d-flex justify-content-center position-relative bg-4 position-relative pb-5"
             style={{ minHeight: "50vh" }}>
-            <div className="position-absolute top-0 start-50 translate-middle-x"><p className="box-title bg-2 color-1">Active Campaign</p></div>
+            <div className="position-absolute top-0 start-50 translate-middle-x"><p className="box-title bg-1 color-5">Active Campaign</p></div>
             <div className="mt-5">
                 <h2 className='flood-title mt-5 mb-0'>Donation for Flood Affected People</h2>
                 <p className='container py-2 text-center px-5 px-md-5 campaign-description'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta quam libero ut mollitia? Facilis unde eveniet ut aperiam minima non praesentium voluptates adipisci aliquam maxime animi a doloribus, labore voluptatibus, qui quia molestias commodi recusandae debitis nemo rem consequuntur. Rerum, officiis similique. Beatae magnam optio ullam nobis minima. Temporibus illo rem quas, a veritatis quod optio illum culpa. Porro sit illo magnam. Consectetur error, doloremque adipisci esse eligendi itaque rem.</p>

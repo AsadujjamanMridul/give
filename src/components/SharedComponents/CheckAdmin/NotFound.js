@@ -8,7 +8,7 @@ const NotFound = () => {
         <div>
             <Navbar/>
             <div className='min-vh-100 center'>
-                <h2 className='voluntter-divider'>You do not have permission to access this page</h2>
+                <h2 className='volunteer-divider'>You do not have permission to access this page</h2>
             </div>
             <Newsletter/>
             <Footer/>

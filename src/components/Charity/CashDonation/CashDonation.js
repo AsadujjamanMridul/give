@@ -25,7 +25,7 @@ const CashDonation = () => {
 
         donationData.paymentId = paymentId;
 
-        const url = `http://localhost:5000/addCashDonation`;
+        const url = `https://enigmatic-fortress-83830.herokuapp.com/addCashDonation`;
 
         fetch(url, {
             method: "POST",

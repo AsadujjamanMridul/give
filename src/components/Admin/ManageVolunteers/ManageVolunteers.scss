@@ -17,7 +17,7 @@
     background-color: transparent;
 }
 
-.voluntter-divider {
+.volunteer-divider {
     font-family: "Poppins", sans-serif;
     font-size: 1.2em !important;
     font-weight: 500;
@@ -40,7 +40,7 @@
 
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
-    .voluntter-divider {
+    .volunteer-divider {
         font-size: 1em !important;
     }
 
@@ -52,7 +52,7 @@
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) and (min-width: 575.98px) {
-    .voluntter-divider {
+    .volunteer-divider {
         font-size: 1em !important;
     }
 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App'
@@ -22,6 +22,8 @@ import Navbar from '../SharedComponents/Navbar/Navbar';
 const Login = () => {
 
     const { user } = useParams();
+
+    const [formForUser, setFromForUser] = useState(user);
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
@@ -50,10 +52,11 @@ const Login = () => {
 
                     user.updateProfile({
                         displayName: name,
-                        photoURL: '../../icon/user.png'
+                        photoURL: 'https://i.ibb.co/q72R3bs/user.png'
                     }).then(function () {
-                        const newLoggedInUser = { name, email, imageURL: '../../icon/user.png' };
+                        const newLoggedInUser = { name, email, imageURL: 'https://i.ibb.co/q72R3bs/user.png' };
                         setLoggedInUser(newLoggedInUser);
+                        localStorage.setItem( 'loggedInUser', JSON.stringify(newLoggedInUser));
                         history.replace(from);
                     }).catch(function (error) {
                         alert(error);
@@ -73,13 +76,15 @@ const Login = () => {
 
 
     const onLogIn = data => {
-        const { email, password } = data;
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        console.log(data);
+        const { login_email, login_password } = data;
+        firebase.auth().signInWithEmailAndPassword(login_email, login_password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 const { displayName, email, photoURL } = user;
                 const newLoggedInUser = { name: displayName, email, imageURL: photoURL };
                 setLoggedInUser(newLoggedInUser);
+                localStorage.setItem( 'loggedInUser', JSON.stringify(newLoggedInUser));
                 history.replace(from);
             })
             .catch((error) => {
@@ -104,6 +109,7 @@ const Login = () => {
                 const { displayName, email, photoURL } = result.user;
                 const newLoggedInUser = { name: displayName, email, imageURL: photoURL };
                 setLoggedInUser(newLoggedInUser);
+                localStorage.setItem( 'loggedInUser', JSON.stringify(newLoggedInUser));
                 history.replace(from);
 
             }).catch((error) => {
@@ -130,6 +136,7 @@ const Login = () => {
                 const { displayName, email } = result.user;
                 const newLoggedInUser = { name: displayName, email };
                 setLoggedInUser(newLoggedInUser);
+                localStorage.setItem( 'loggedInUser', JSON.stringify(newLoggedInUser));
                 history.replace(from);
             })
             .catch((error) => {
@@ -164,17 +171,18 @@ const Login = () => {
 
             <input className='submit-button' type="submit" value="Create an account" />
 
-            <p className='text-center mt-2 text-white'><small>Already have an account?  <Link to='/login/existing' className='create-acc-link'> Login</Link></small></p>
+            <p className='text-center mt-2 text-white'><small>Already have an account?  <a href='/login/existing' className='create-acc-link'> Login</a></small></p>
         </form>
     }
     if (user === 'existing') {
+        form = "";
         form = <form className='login-form' onSubmit={handleSubmit(onLogIn)} >
             <h4 className="login-title">Login</h4>
-            < input className='input' name="email" {...register('email', { required: true })} placeholder="Email" />
-            {errors.email && <span className='error'>Email is required</span>}
+            < input className='input' name="login_email" {...register('login_email', { required: true })} placeholder="Email" />
+            {errors.login_email && <span className='error'>Email is required</span>}
 
-            < input className='input' type='password' name="password" {...register('password', { required: true })} placeholder="Passowrd" />
-            {errors.password && <span className='error'>Password is required</span>}
+            < input className='input' type='password' name="login_password" {...register('login_password', { required: true })} placeholder="Passowrd" />
+            {errors.login_password && <span className='error'>Password is required</span>}
 
             <input className='submit-button' type="submit" value="Login" />
 

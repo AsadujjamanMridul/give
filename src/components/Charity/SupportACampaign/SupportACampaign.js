@@ -27,7 +27,7 @@ const SupportACampaign = () => {
 
         donationData.paymentId = paymentId;
 
-        const url = `http://localhost:5000/addCampaignDonation`;
+        const url = `https://enigmatic-fortress-83830.herokuapp.com/addCampaignDonation`;
 
         fetch(url, {
             method: "POST",

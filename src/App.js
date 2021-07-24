@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import 'antd/dist/antd.css'; 
+import 'antd/dist/antd.css';
 
 import './App.scss';
 import {
@@ -21,12 +21,16 @@ import BecomeAVolunteer from './components/Charity/BecomeAVolunteer/BecomeAVolun
 import SupportACampaign from './components/Charity/SupportACampaign/SupportACampaign';
 import CustomDonation from './components/Charity/CustomDonation/CustomDonation';
 import CheckAdmin from './components/SharedComponents/CheckAdmin/CheckAdmin'
+import Dashboard from './components/User/Dashboard/Dashboard';
 
 export const UserContext = createContext();
 
 function App() {
 
-  const [loggedInUser, setLoggedInUser] = useState({})
+  const [loggedInUser, setLoggedInUser] = useState(
+    localStorage.getItem('loggedInUser') ?
+      JSON.parse(localStorage.getItem('loggedInUser')) : {}
+  )
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -36,25 +40,25 @@ function App() {
             <Home />
           </Route>
           <Route path='/tog'>
-            <ToG/>
+            <ToG />
           </Route>
           <Route path='/campaigns'>
-            <Campaigns/>
+            <Campaigns />
           </Route>
           <Route path='/charity'>
-            <Charity/>
+            <Charity />
           </Route>
           <Route path='/donate-cash'>
-            <CashDonation/>
+            <CashDonation />
           </Route>
           <Route path='/custom-donation'>
-            <CustomDonation/>
+            <CustomDonation />
           </Route>
           <Route path='/support-campaign'>
-            <SupportACampaign/>
+            <SupportACampaign />
           </Route>
           <Route path='/become-volunteer'>
-            <BecomeAVolunteer/>
+            <BecomeAVolunteer />
           </Route>
           <Route path='/gallery'>
             <GalleryView />
@@ -63,7 +67,10 @@ function App() {
             <Login />
           </Route>
           <PrivateRoute path='/admin'>
-            <CheckAdmin/>
+            <CheckAdmin />
+          </PrivateRoute>
+          <PrivateRoute path='/dashboard'>
+            <Dashboard/>
           </PrivateRoute>
           <Route exact path='/'>
             <Home />

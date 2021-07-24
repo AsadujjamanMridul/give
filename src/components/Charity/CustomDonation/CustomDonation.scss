@@ -6,6 +6,15 @@
 ;
 }
 
+#select-category{
+    &:focus {
+        outline: none !important;
+        border: 1px solid transparent;
+        box-shadow: rgba(16, 55, 92, 0.2) 0px 2px 8px 0px;
+        background-color: transparent !important;
+    }
+}
+
 .file-input {
     font-family: "Poppins", sans-serif;
     font-weight: 400;

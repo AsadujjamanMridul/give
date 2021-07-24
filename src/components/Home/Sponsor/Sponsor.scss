@@ -1,0 +1,23 @@
+.sponsor_children {
+    object-fit: cover;
+}
+
+.sponsor-div {
+    height: 40vh;
+}
+
+// Media query
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .sponsor-div{
+        height: 30vh;
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) and (min-width: 575.98px) {
+    .sponsor-div{
+        height: 30vh;
+    }
+}
