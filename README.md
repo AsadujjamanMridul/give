@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="screenshots/logo.svg" width="25px" align="center"/> Give 
+  <img src="screenshots/logo.svg" width="35px" align="center"/> Give 
 </h1>
 #### Donate For a Good Cause
 
