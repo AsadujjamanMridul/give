@@ -23,7 +23,7 @@ Anyone can donate anything to the people in need, through this web application. 
 <br/>
 • React Router <br/>
 • React Hook Form <br/>
-• Private Route <br/>
+• SCSS <br/>
 • Bootstrap <br/>
 • Ant Design
 
