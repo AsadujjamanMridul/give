@@ -37,28 +37,48 @@ Anyone can donate anything to the people in need, through this web application. 
   <img src="screenshots/1.png" width="80%" align="center" style="border-radius:10px"/>
 </p>
 <h5 align="center">
-  Landing Page (Web)
+  Landing Page (web)
 </h5>
 <br/>
-<p align="center">
-  <img src="screenshots/2.png" width="80%" align="center" style="border-radius:10px"/>
-</p>
 <br/>
 <p align="center">
-  <img src="screenshots/3.png" width="80%" align="center" style="border-radius:10px"/>
+  <img src="screenshots/2.png" width="80%" align="center" style="border-radius:2%"/>
 </p>
+<h5 align="center">
+  Landing Page (mobile)
+</h5>
+<br/>
 <br/>
 <p align="center">
-  <img src="screenshots/4.png" width="80%" align="center" style="border-radius:10px"/>
+  <img src="screenshots/3.png" width="80%" align="center" style="border-radius:2%"/>
 </p>
+<h5 align="center">
+  Charity Sections
+</h5>
+<br/>
 <br/>
 <p align="center">
-  <img src="screenshots/5.png" width="80%" align="center" style="border-radius:10px"/>
+  <img src="screenshots/4.png" width="80%" align="center" style="border-radius:2%"/>
 </p>
+<h5 align="center">
+  User Dashboard
+</h5>
+<br/>
 <br/>
 <p align="center">
-  <img src="screenshots/6.png" width="80%" align="center" style="border-radius:10px"/>
+  <img src="screenshots/5.png" width="80%" align="center" style="border-radius:2%"/>
 </p>
+<h5 align="center">
+  Admin Panel (web)
+</h5>
+<br/>
+<br/>
+<p align="center">
+  <img src="screenshots/6.png" width="80%" align="center" style="border-radius:2%"/>
+</p>
+<h5 align="center">
+  Admin Panel (mobile)
+</h5>
 
 
 <br/>
