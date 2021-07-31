@@ -36,6 +36,9 @@ Anyone can donate anything to the people in need, through this web application. 
 <p align="center">
   <img src="screenshots/1.png" width="80%" align="center" style="border-radius:10px"/>
 </p>
+<h5 align="center">
+  Landing Page (Web)
+</h5>
 <br/>
 <p align="center">
   <img src="screenshots/2.png" width="80%" align="center" style="border-radius:10px"/>
