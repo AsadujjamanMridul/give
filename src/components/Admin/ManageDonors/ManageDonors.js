@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import './ManageDonors.scss'
 
-import { Row, Col, Divider, Tooltip } from 'antd';
+import { Row, Col, Divider, Tooltip, BackTop } from 'antd';
 import { message, Collapse, Modal } from 'antd';
 import { CaretDownOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -128,6 +128,18 @@ const ManageDonors = () => {
                     </div>
                 </Col>
             </Row>
+
+            <BackTop>
+                <div className='container-fluid shadow-sm center rounded-circle'
+                    style={{
+                        height: 40, 
+                        width: 40,
+                        backgroundColor: 'rgba(42,222,146, .2)',
+                        border: 'none'
+                    }}>
+                    <FontAwesomeIcon icon={faChevronUp} size={'md'} className='color-1' />
+                </div>
+            </BackTop>
 
             <div className='container'>
                 <Divider orientation='left' className='volunteer-divider color-1'>Add New Donor</Divider>

@@ -40,7 +40,7 @@ const Navbar = () => {
     let loginButtonToggle;
     if (loggedInUser.name === undefined) {
         loginButtonToggle =
-            <Link className="nav-link nav-login-btn px-4 text-center" to="/login/new" tabIndex="-1">Login</Link>
+            <Link className="nav-link nav-login-btn px-4 text-center" to="/login/existing" tabIndex="-1">Login</Link>
     }
     else {
         loginButtonToggle =
@@ -62,7 +62,7 @@ const Navbar = () => {
                             <button className='btn btn-brand-borderless sign-out-btn' onClick={() => clearUser()}>Sign Out</button>
                         </div>
                     }
-                    trigger={'hover'}
+                    trigger={'click'}
                 >
                     <img src={isDonor[0] ? isDonor[0].photoURL : loggedInUser.imageURL } alt="..." className='img-fluid rounded-circle loggedIn-img ms-md-4 mt-2 mt-md-0' />
                 </Popover>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import './DonationRequests.scss'
 
-import { Row, Col, Divider } from 'antd';
+import { Row, Col, Divider, BackTop } from 'antd';
 import { message, Collapse, Modal } from 'antd';
 import { CaretDownOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandHoldingHeart, faMars, faPhoneAlt, faStream, faTransgender, faVenus } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp, faHandHoldingHeart, faMars, faPhoneAlt, faStream, faTransgender, faVenus } from "@fortawesome/free-solid-svg-icons";
 
 const { Panel } = Collapse;
 const { confirm } = Modal;
@@ -77,6 +77,18 @@ const DonationRequests = () => {
                     </div>
                 </Col>
             </Row>
+
+            <BackTop>
+                <div className='container-fluid shadow-sm center rounded-circle'
+                    style={{
+                        height: 40, 
+                        width: 40,
+                        backgroundColor: 'rgba(42,222,146, .2)',
+                        border: 'none'
+                    }}>
+                    <FontAwesomeIcon icon={faChevronUp} size={'md'} className='color-1' />
+                </div>
+            </BackTop>
 
             <div className='container'>
                 <Divider orientation='left' className='volunteer-divider color-1'>Donation Requested</Divider>

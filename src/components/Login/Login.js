@@ -9,14 +9,13 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 import Footer from '../SharedComponents/Footer/Footer';
 import './Login.css'
 
 import firebaseConfig from '../../firebase.config';
 
-import face1 from '../../images/5.jpg'
 import Navbar from '../SharedComponents/Navbar/Navbar';
 
 const Login = () => {
@@ -123,33 +122,6 @@ const Login = () => {
     }
 
 
-    const handleFacebookSignIn = () => {
-        var fbProvider = new firebase.auth.FacebookAuthProvider();
-        firebase
-            .auth()
-            .signInWithPopup(fbProvider)
-            .then((result) => {
-                var credential = result.credential;
-                var user = result.user;
-                var accessToken = credential.accessToken;
-
-                const { displayName, email } = result.user;
-                const newLoggedInUser = { name: displayName, email };
-                setLoggedInUser(newLoggedInUser);
-                localStorage.setItem( 'loggedInUser', JSON.stringify(newLoggedInUser));
-                history.replace(from);
-            })
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                var email = error.email;
-                var credential = error.credential;
-
-                alert(errorCode, errorMessage);
-            });
-    }
-
-
     // Checking Existing User 
 
     let form = "";
@@ -157,31 +129,31 @@ const Login = () => {
         form = <form className='login-form' onSubmit={handleSubmit(onSignIn)} >
             <h4 className="login-title">Create an account</h4>
 
-            < input className='input' name="name" {...register('name', { required: true })} placeholder="Name" />
+            < input className='input' name="name" {...register('name')} placeholder="Name" required/>
             {errors.name && <span className='error'>Name is required</span>}
 
-            < input className='input' name="email" {...register('email', { required: true })} placeholder="Email" />
+            < input className='input' name="email" {...register('email')} placeholder="Email" required/>
             {errors.email && <span className='error'>Email is required</span>}
 
-            < input className='input' type='password' name="password" {...register('password', { required: true })} placeholder="Passowrd" />
+            < input className='input' type='password' name="password" {...register('password')} placeholder="Passowrd" required/>
             {errors.password && <span className='error'>Password is required</span>}
 
-            < input className='input' type='password' name="confirmPassword" {...register('confirmPassword', { required: true })} placeholder="Confirm passowrd" />
+            < input className='input' type='password' name="confirmPassword" {...register('confirmPassword')} placeholder="Confirm passowrd" required/>
             {errors.confirmPassword && <span className='error'>This field is required</span>}
 
             <input className='submit-button' type="submit" value="Create an account" />
 
-            <p className='text-center mt-2 text-white'><small>Already have an account?  <a href='/login/existing' className='create-acc-link'> Login</a></small></p>
+            <p className='text-center mt-2 text-white'><small>Already have an account?  <Link to='/login/existing' className='create-acc-link'> Login</Link></small></p>
         </form>
     }
     if (user === 'existing') {
         form = "";
         form = <form className='login-form' onSubmit={handleSubmit(onLogIn)} >
             <h4 className="login-title">Login</h4>
-            < input className='input' name="login_email" {...register('login_email', { required: true })} placeholder="Email" />
+            < input className='input' name="login_email" {...register('login_email')} placeholder="Email" required/>
             {errors.login_email && <span className='error'>Email is required</span>}
 
-            < input className='input' type='password' name="login_password" {...register('login_password', { required: true })} placeholder="Passowrd" />
+            < input className='input' type='password' name="login_password" {...register('login_password')} placeholder="Passowrd"  required/>
             {errors.login_password && <span className='error'>Password is required</span>}
 
             <input className='submit-button' type="submit" value="Login" />
@@ -205,9 +177,6 @@ const Login = () => {
                             <div>
                                 <div className="d-flex justify-content-center">
                                     <button onClick={handleGoogleSignIn} className="btn login-with-google my-2"><FontAwesomeIcon icon={faGoogle} className='me-3' />Continue with google</button>
-                                </div>
-                                <div className="d-flex justify-content-center">
-                                    <button onClick={handleFacebookSignIn} className="btn login-with-fb"><FontAwesomeIcon icon={faFacebookF} className='me-3' />Continue with facebook</button>
                                 </div>
                             </div>
                         </div>

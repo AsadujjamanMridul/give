@@ -2,8 +2,8 @@ import React, { useState, useContext } from 'react';
 import './AdminPanel.scss'
 import logo from '../../../images/logo.png'
 
-import { Badge, Layout, Menu } from 'antd';
-import { Avatar, Image } from 'antd';
+import { Layout } from 'antd';
+import { Avatar } from 'antd';
 
 import TogPost from '../TogPost/TogPost';
 import SideMenu from './SideMenu';
@@ -11,7 +11,7 @@ import SideMenu from './SideMenu';
 import { Link } from "react-router-dom";
 import { UserContext } from '../../../App';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const AdminPanel = () => {
 
