@@ -12,6 +12,8 @@ import { Row, Col, Divider, Collapse, Tooltip, Modal, message } from 'antd'
 import { EditOutlined, CaretDownOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import { useForm } from 'react-hook-form';
 
+import logo from '../../../icon/logo.svg'
+ 
 const { Panel } = Collapse;
 const { confirm } = Modal;
 
@@ -20,6 +22,7 @@ const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [userDonationData, setUserDonationData] = useState([]);
     const [isDonor, setIsDonor] = useState([]);
+    const [isVolunteer, setIsVolunteer] = useState([]);
     const [requests, setRequests] = useState([]);
 
     useEffect(() => {
@@ -34,6 +37,14 @@ const Dashboard = () => {
             .then(result => {
                 if (result) {
                     setIsDonor(result);
+                }
+            })
+
+        fetch(`https://enigmatic-fortress-83830.herokuapp.com/isVolunteer?email=${loggedInUser.email}`)
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    setIsVolunteer(result);
                 }
             })
 
@@ -153,11 +164,29 @@ const Dashboard = () => {
                         </Col>
                     </Row>
 
+                    {
+                        isVolunteer[0] ?
+                            <Row gutter={[{ xs: 8, sm: 16, md: 24 }, { xs: 8, sm: 16, md: 24 }]}
+                                className='mt-4'
+                                justify='center'>
+                                <Col className="gutter-row rounded-3 bg-5 pt-4 shadow-sm" xs={24} sm={12} lg={12} span={6}>
+
+                                    <div className='d-flex align-items-center dashboard-profile-header mb-4'>
+                                        <div className='mx-auto d-flex center'>
+                                            <img src={logo} alt="" style={{maxWidth: '1.5em'}} className='me-3'/>
+                                            <h2 className='dashboard-user-email color-1 my-0'>Volunteer Id: <span className='fw-600'>{isVolunteer[0]._id}</span></h2>
+                                        </div>
+                                    </div>
+                                </Col>
+                            </Row>
+                            : ""
+                    }
+
 
                     {/* Donation Request Section */}
 
                     <Row gutter={[{ xs: 8, sm: 16, md: 24 }, { xs: 8, sm: 16, md: 24 }]}
-                        className=''
+                        className='mt-3'
                         justify='center'>
                         <Col className="gutter-row rounded-3 my-2" xs={24} sm={12} lg={12} span={6}>
                             <Divider orientation='center' className='color-1 dashboard-divider'>
