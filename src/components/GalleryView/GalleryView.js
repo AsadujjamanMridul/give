@@ -28,7 +28,7 @@ const GalleryView = () => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/photo-gallery')
+        fetch('https://give-server.vercel.app/photo-gallery')
             .then(res => res.json())
             .then(data => setPhotos(data));
     }, [])

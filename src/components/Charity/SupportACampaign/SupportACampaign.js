@@ -27,7 +27,7 @@ const SupportACampaign = () => {
 
         donationData.paymentId = paymentId;
 
-        const url = `https://enigmatic-fortress-83830.herokuapp.com/addCampaignDonation`;
+        const url = `https://give-server.vercel.app/addCampaignDonation`;
 
         fetch(url, {
             method: "POST",

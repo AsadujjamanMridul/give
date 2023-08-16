@@ -22,7 +22,7 @@ const CustomDonation = () => {
         data.donationInfo = donationInfo;
         data.sampleImage = imageURL;
 
-        const url = "https://enigmatic-fortress-83830.herokuapp.com/newDonationRequest";
+        const url = "https://give-server.vercel.app/newDonationRequest";
 
         fetch(url, {
             method: "POST",

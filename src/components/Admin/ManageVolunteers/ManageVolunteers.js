@@ -23,13 +23,13 @@ const ManageVolunteers = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteVolunteer/${id}`, {
+                fetch(`https://give-server.vercel.app/deleteVolunteer/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('https://enigmatic-fortress-83830.herokuapp.com/volunteers')
+                            fetch('https://give-server.vercel.app/volunteers')
                                 .then(res => res.json())
                                 .then(data => {
                                     setVolunteers(data);
@@ -54,7 +54,7 @@ const ManageVolunteers = () => {
         const {name, age, gender, email, phone, facebook} = volunteerDetails;
         const newVolunteer = {name, age, gender, email, phone, facebook};
 
-        const url = "https://enigmatic-fortress-83830.herokuapp.com/addVolunteer";
+        const url = "https://give-server.vercel.app/addVolunteer";
 
         fetch(url, {
             method: "POST",
@@ -80,13 +80,13 @@ const ManageVolunteers = () => {
 
 
     const deleteVolunteerRequest = id => {
-        fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteVolunteerRequest/${id}`, {
+        fetch(`https://give-server.vercel.app/deleteVolunteerRequest/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    fetch('https://enigmatic-fortress-83830.herokuapp.com/volunteer-requests')
+                    fetch('https://give-server.vercel.app/volunteer-requests')
                         .then(res => res.json())
                         .then(data => {
                             setRequested(data);
@@ -109,13 +109,13 @@ const ManageVolunteers = () => {
     }, [])
 
     const reloadScreen = () => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/volunteer-requests')
+        fetch('https://give-server.vercel.app/volunteer-requests')
             .then(res => res.json())
             .then(data => {
                 setRequested(data);
             });
 
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/volunteers')
+        fetch('https://give-server.vercel.app/volunteers')
             .then(res => res.json())
             .then(data => {
                 setVolunteers(data);

@@ -15,7 +15,7 @@ const BecomeAVolunteer = () => {
         data.gender = gender;
         console.log(data)
 
-        const url = `https://enigmatic-fortress-83830.herokuapp.com/newVolunteerRequest`;
+        const url = `https://give-server.vercel.app/newVolunteerRequest`;
 
         fetch(url, {
             method: "POST",

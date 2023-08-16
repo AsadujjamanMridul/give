@@ -26,13 +26,13 @@ const Dashboard = () => {
     const [requests, setRequests] = useState([]);
 
     useEffect(() => {
-        fetch(`https://enigmatic-fortress-83830.herokuapp.com/userSpecificData?email=${loggedInUser.email}`)
+        fetch(`https://give-server.vercel.app/userSpecificData?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 setUserDonationData(data);
             });
 
-        fetch(`https://enigmatic-fortress-83830.herokuapp.com/isDonor?email=${loggedInUser.email}`)
+        fetch(`https://give-server.vercel.app/isDonor?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(result => {
                 if (result) {
@@ -40,7 +40,7 @@ const Dashboard = () => {
                 }
             })
 
-        fetch(`https://enigmatic-fortress-83830.herokuapp.com/isVolunteer?email=${loggedInUser.email}`)
+        fetch(`https://give-server.vercel.app/isVolunteer?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(result => {
                 if (result) {
@@ -48,7 +48,7 @@ const Dashboard = () => {
                 }
             })
 
-        fetch(`https://enigmatic-fortress-83830.herokuapp.com/userSpecificRequests?email=${loggedInUser.email}`)
+        fetch(`https://give-server.vercel.app/userSpecificRequests?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 setRequests(data);
@@ -66,13 +66,13 @@ const Dashboard = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`https://enigmatic-fortress-83830.herokuapp.com/deletePost/${id}`, {
+                fetch(`https://give-server.vercel.app/deletePost/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch(`https://enigmatic-fortress-83830.herokuapp.com/userSpecificData?email=${loggedInUser.email}`)
+                            fetch(`https://give-server.vercel.app/userSpecificData?email=${loggedInUser.email}`)
                                 .then(res => res.json())
                                 .then(data => {
                                     setUserDonationData(data);
@@ -100,13 +100,13 @@ const Dashboard = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteDonationRequest/${id}`, {
+                fetch(`https://give-server.vercel.app/deleteDonationRequest/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch(`https://enigmatic-fortress-83830.herokuapp.com/userSpecificRequests?email=${loggedInUser.email}`)
+                            fetch(`https://give-server.vercel.app/userSpecificRequests?email=${loggedInUser.email}`)
                                 .then(res => res.json())
                                 .then(data => {
                                     setRequests(data);

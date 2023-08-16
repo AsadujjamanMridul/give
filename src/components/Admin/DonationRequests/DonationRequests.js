@@ -18,13 +18,13 @@ const DonationRequests = () => {
     const [requests, setRequests] = useState([]);
 
     const deleteDonationRequest = id => {
-        fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteDonationRequest/${id}`, {
+        fetch(`https://give-server.vercel.app/deleteDonationRequest/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    fetch('https://enigmatic-fortress-83830.herokuapp.com/donationRequest')
+                    fetch('https://give-server.vercel.app/donationRequest')
                         .then(res => res.json())
                         .then(data => {
                             setRequests(data);
@@ -59,7 +59,7 @@ const DonationRequests = () => {
     }, [])
 
     const reloadScreen = () => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/donationRequest')
+        fetch('https://give-server.vercel.app/donationRequest')
             .then(res => res.json())
             .then(data => {
                 setRequests(data);

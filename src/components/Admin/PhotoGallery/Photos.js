@@ -1,6 +1,6 @@
 export const photos = [];
 
-fetch('https://enigmatic-fortress-83830.herokuapp.com/photo-gallery')
+fetch('https://give-server.vercel.app/photo-gallery')
   .then(res => res.json())
   .then(data => {
     data.forEach(photo => {

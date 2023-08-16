@@ -12,7 +12,7 @@ const ToG = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/posts')
+        fetch('https://give-server.vercel.app/posts')
             .then(res => res.json())
             .then(data => {
                 setPosts(data);
@@ -26,7 +26,7 @@ const ToG = () => {
             <Navbar />
 
             <header className='center tog-header mb-4'>
-                <h2 className='m-0 p-0'>Timeline of Genorosity</h2>
+                <h2 className='m-0 p-0'>Timeline of Generosity</h2>
             </header>
 
             <Row gutter={[{ xs: 8, sm: 16, md: 24 }, { xs: 8, sm: 16, md: 24 }]}

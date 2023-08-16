@@ -28,7 +28,7 @@ const PhotoGallery = () => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/photo-gallery')
+        fetch('https://give-server.vercel.app/photo-gallery')
             .then(res => res.json())
             .then(data => setPhotos(data));
     }, [])
@@ -48,7 +48,7 @@ const PhotoGallery = () => {
             height: data.height
 
         };
-        const url = "https://enigmatic-fortress-83830.herokuapp.com/addPhoto";
+        const url = "https://give-server.vercel.app/addPhoto";
 
         fetch(url, {
             method: "POST",
@@ -92,7 +92,7 @@ const PhotoGallery = () => {
 
     const [totalPhotos, setTotalPhots] = useState(null);
     const loadPhotos = () => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/photo-gallery')
+        fetch('https://give-server.vercel.app/photo-gallery')
             .then(res => res.json())
             .then(data => {
                 setTotalPhots(data.length);

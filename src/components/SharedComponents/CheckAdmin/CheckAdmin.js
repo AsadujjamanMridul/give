@@ -10,7 +10,7 @@ const CheckAdmin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch(`https://enigmatic-fortress-83830.herokuapp.com/isAdmin?email=${loggedInUser.email}`)
+        fetch(`https://give-server.vercel.app/isAdmin?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(result => {
                 if (result) {

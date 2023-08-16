@@ -25,13 +25,13 @@ const ManageAdmins = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteAdmin/${id}`, {
+                fetch(`https://give-server.vercel.app/deleteAdmin/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('https://enigmatic-fortress-83830.herokuapp.com/admins')
+                            fetch('https://give-server.vercel.app/admins')
                                 .then(res => res.json())
                                 .then(data => {
                                     setAdmins(data);
@@ -56,7 +56,7 @@ const ManageAdmins = () => {
 
     const onSubmit = newAdminData => {
 
-        const url = "https://enigmatic-fortress-83830.herokuapp.com/addAdmin";
+        const url = "https://give-server.vercel.app/addAdmin";
 
         fetch(url, {
             method: "POST",
@@ -87,7 +87,7 @@ const ManageAdmins = () => {
     }, [])
 
     const reloadData = () => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/admins')
+        fetch('https://give-server.vercel.app/admins')
             .then(res => res.json())
             .then(data => {
                 setAdmins(data);

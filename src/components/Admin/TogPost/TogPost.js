@@ -27,13 +27,13 @@ const TogPost = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`https://enigmatic-fortress-83830.herokuapp.com/deletePost/${id}`, {
+                fetch(`https://give-server.vercel.app/deletePost/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('https://enigmatic-fortress-83830.herokuapp.com/posts')
+                            fetch('https://give-server.vercel.app/posts')
                                 .then(res => res.json())
                                 .then(data => {
                                     setPosts(data);
@@ -57,7 +57,7 @@ const TogPost = () => {
         postDetails.datePosted = new Date().toString('dd/MM/yyyy')
         const donorId = postDetails.donorId;
 
-        fetch(`https://enigmatic-fortress-83830.herokuapp.com/getDonorData/${donorId}`)
+        fetch(`https://give-server.vercel.app/getDonorData/${donorId}`)
             .then(res => res.json())
             .then(data => {
                 if (data) {
@@ -75,7 +75,7 @@ const TogPost = () => {
     }, [])
 
     const fetchPosts = () => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/posts')
+        fetch('https://give-server.vercel.app/posts')
             .then(res => res.json())
             .then(data => {
                 setPosts(data);
@@ -90,7 +90,7 @@ const TogPost = () => {
         newPost.datePosted = new Date().toUTCString();
         newPost.donorEmail = forcedData.email;
 
-        const url = "https://enigmatic-fortress-83830.herokuapp.com/addPost";
+        const url = "https://give-server.vercel.app/addPost";
 
         fetch(url, {
             method: "POST",

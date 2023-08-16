@@ -25,13 +25,13 @@ const ManageDonors = () => {
             cancelText: 'Cancel',
             onOk() {
 
-                fetch(`https://enigmatic-fortress-83830.herokuapp.com/deleteDonor/${id}`, {
+                fetch(`https://give-server.vercel.app/deleteDonor/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(result => {
                         if (result) {
-                            fetch('https://enigmatic-fortress-83830.herokuapp.com/donors')
+                            fetch('https://give-server.vercel.app/donors')
                                 .then(res => res.json())
                                 .then(data => {
                                     setDonors(data);
@@ -60,7 +60,7 @@ const ManageDonors = () => {
 
         newDonorData.photoURL = imageURL;
 
-        const url = "https://enigmatic-fortress-83830.herokuapp.com/addDonor";
+        const url = "https://give-server.vercel.app/addDonor";
 
         fetch(url, {
             method: "POST",
@@ -91,7 +91,7 @@ const ManageDonors = () => {
     }, [])
 
     const reloadData = () => {
-        fetch('https://enigmatic-fortress-83830.herokuapp.com/donors')
+        fetch('https://give-server.vercel.app/donors')
             .then(res => res.json())
             .then(data => {
                 setDonors(data);
